@@ -1,6 +1,7 @@
 import requests, json, time, re, markovify, sys
 refetch = str(sys.argv[2])
 board = str(sys.argv[1])
+num = str(sys.argv[3])
 print(refetch)
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -50,7 +51,7 @@ text_model = markovify.Text(dataset)
 
 print("****Starting Markovify****\n")
 
-for i in range(5):
+for i in range(int(num)):
   print(text_model.make_sentence())
 
 target.close();
